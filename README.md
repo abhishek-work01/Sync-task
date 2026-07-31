@@ -1,83 +1,26 @@
-> [!NOTE]
-> This project has been officially archived and will no longer receive updates. See the [Templates](https://vercel.com/templates/next.js) directory for Next.js starters.
-> 
-> I started this project when the Next.js App Router was in public preview. Because the framework has since stabilized and undergone significant architectural changes, the code in this repository:
-> - Does not reflect current best practices.
-> - May contain deprecated APIs or patterns.
-> - Is not recommended for use in production environments.
+# SyncTask
 
-# Taxonomy
+An internship project: A modern, full-stack task management application built with Next.js App Router. This project is a customized and rebranded iteration of the Taxonomy template, optimized for local development and streamlined task management.
 
-An open source application built using the new router, server components and everything new in Next.js 13.
+## 🚀 Tech Stack
 
-## About this project
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Database:** [SQLite](https://www.sqlite.org/) (Migrated for seamless local Windows environment setup)
+* **ORM:** [Prisma](https://www.prisma.io/)
+* **Authentication:** [NextAuth.js](https://next-auth.js.org/) (GitHub OAuth integration)
+* **UI Components:** [Radix UI](https://www.radix-ui.com/) & [shadcn/ui](https://ui.shadcn.com/)
 
-This project as an experiment to see how a modern app (with features like authentication, subscriptions, API routes, static pages for docs ...etc) would work in Next.js 13 and server components. 
+## ✨ Key Features & Updates
 
-## Features
+* **Rebranded UI:** Fully transitioned from a generic blog/post structure to a dedicated task management interface (SyncTask).
+* **Database Migration:** Switched from MySQL to SQLite to resolve connection issues and ensure a smooth, out-of-the-box local development experience.
+* **Authentication:** Integrated GitHub OAuth for secure and immediate user login.
+* **Streamlined Billing Flow:** Implemented a mock subscription bypass for the "$3.99/month PRO plan" to demonstrate premium feature access without requiring live payment gateway credentials.
+* **API Overhaul:** Updated backend API routes (`/api/tasks`) to sync with the updated Prisma schema (`Task` model).
 
-- New `/app` dir,
-- Routing, Layouts, Nested Layouts and Layout Groups
-- Data Fetching, Caching and Mutation
-- Loading UI
-- Route handlers
-- Metadata files
-- Server and Client Components
-- API Routes and Middlewares
-- Authentication using **NextAuth.js**
-- ORM using **Prisma**
-- Database on **PlanetScale**
-- UI Components built using **Radix UI**
-- Documentation and blog using **MDX** and **Contentlayer**
-- Subscriptions using **Stripe**
-- Styled using **Tailwind CSS**
-- Validations using **Zod**
-- Written in **TypeScript**
+## 💻 Running Locally
 
-## Roadmap
-
-- [x] ~Add MDX support for basic pages~
-- [x] ~Build marketing pages~
-- [x] ~Subscriptions using Stripe~
-- [x] ~Responsive styles~
-- [x] ~Add OG image for blog using @vercel/og~
-- [x] Dark mode
-
-## Known Issues
-
-A list of things not working right now:
-
-1. ~GitHub authentication (use email)~
-2. ~[Prisma: Error: ENOENT: no such file or directory, open '/var/task/.next/server/chunks/schema.prisma'](https://github.com/prisma/prisma/issues/16117)~
-3. ~[Next.js 13: Client side navigation does not update head](https://github.com/vercel/next.js/issues/42414)~
-4. [Cannot use opengraph-image.tsx inside catch-all routes](https://github.com/vercel/next.js/issues/48162)
-
-## Why not tRPC, Turborepo or X?
-
-I might add this later. For now, I want to see how far we can get using Next.js only.
-
-If you have some suggestions, feel free to create an issue.
-
-## Running Locally
-
-1. Install dependencies using pnpm:
-
-```sh
-pnpm install
-```
-
-2. Copy `.env.example` to `.env.local` and update the variables.
-
-```sh
-cp .env.example .env.local
-```
-
-3. Start the development server:
-
-```sh
-pnpm dev
-```
-
-## License
-
-Licensed under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/abhishek-work01/Sync-task.git](https://github.com/abhishek-work01/Sync-task.git)
