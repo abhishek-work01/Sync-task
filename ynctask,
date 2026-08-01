@@ -1,0 +1,16 @@
+[35m.env.example[m[36m:[mDATABASE_URL="mysql://root:root@localhost:3306/[1;31mabhishek[m?schema=public"
+[35mREADME.md[m[36m:[mAn internship project: A modern, full-stack task management application built with Next.js App Router. This project is a customized and configure iteration of the [1;31mAbhishek[m template, optimized for local development and streamlined task management.
+[35mapp/(auth)/login/page.tsx[m[36m:[m          {/* Removed the old [1;31mAbhishek[m logo icon, updated heading for SyncTask */}
+[35mapp/(auth)/register/page.tsx[m[36m:[m            {/* Removed the old [1;31mAbhishek[m logo, updated heading for SyncTask */}
+[35mapp/(marketing)/pricing/page.tsx[m[36m:[m          [1;31mAbhishek[m is a demo app.{" "}
+[35mapp/api/og/route.tsx[m[36m:[m              <div tw="flex ml-2">github.com/shadcn/[1;31mabhishek[m</div>
+[35mcomponents/main-nav.tsx[m[36m:[m        {/* Removed the old [1;31mAbhishek[m icon. Just clean SyncTask text now. */}
+[35mcontent/docs/documentation/index.mdx[m[36m:[m[1;31mAbhishek[m includes a documentation site built using [Contentlayer](https://contentlayer.dev) and [MDX](http://mdxjs.com).
+[35mcontent/docs/index.mdx[m[36m:[mdescription: Welcome to the [1;31mAbhishek[m documentation.
+[35mcontent/docs/index.mdx[m[36m:[mThis is the documentation for the [1;31mAbhishek[m site.
+[35mcontent/pages/privacy.mdx[m[36m:[mdescription: The Privacy Policy for [1;31mAbhishek[m App.
+[35mpackage-lock.json[m[36m:[m  "name": "[1;31mabhishek[m",
+[35mpackage-lock.json[m[36m:[m      "name": "[1;31mabhishek[m",
+[35mpackage.json[m[36m:[m  "name": "[1;31mabhishek[m",
+[35mpublic/site.webmanifest[m[36m:[m  "name": "[1;31mAbhishek[m",
+[35mpublic/site.webmanifest[m[36m:[m  "short_name": "[1;31mAbhishek[m",
