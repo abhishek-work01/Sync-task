@@ -37,25 +37,37 @@ export default async function DashboardPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader heading="Tasks" text="Create and manage tasks.">
-        <PostCreateButton />
+      <DashboardHeader 
+        heading="Tasks" 
+        text="Create and manage your tasks in real-time."
+      >
+        <PostCreateButton className="rounded-full bg-white text-black hover:bg-zinc-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all font-medium" />
       </DashboardHeader>
-      <div>
+      
+      <div className="mt-6">
         {tasks?.length ? (
-          <div className="divide-y divide-border rounded-md border">
+          /* Premium Glassmorphic List Container */
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.01] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] backdrop-blur-md divide-y divide-white/5">
             {tasks.map((task: any) => (
-              <PostItem key={task.id} post={task} />
+              <div key={task.id} className="transition-colors hover:bg-white/[0.02]">
+                <PostItem post={task} />
+              </div>
             ))}
           </div>
         ) : (
-          <EmptyPlaceholder>
-            <EmptyPlaceholder.Icon name="post" />
-            <EmptyPlaceholder.Title>No tasks created</EmptyPlaceholder.Title>
-            <EmptyPlaceholder.Description>
-              You don&apos;t have any tasks yet. Start creating tasks.
-            </EmptyPlaceholder.Description>
-            <PostCreateButton variant="outline" />
-          </EmptyPlaceholder>
+          /* Premium Empty State */
+          <div className="overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)] backdrop-blur-sm">
+            <EmptyPlaceholder>
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] mb-4">
+                <EmptyPlaceholder.Icon name="post" className="text-zinc-400" />
+              </div>
+              <EmptyPlaceholder.Title className="text-xl font-medium text-zinc-100">No tasks created</EmptyPlaceholder.Title>
+              <EmptyPlaceholder.Description className="text-zinc-400 font-light max-w-sm mx-auto">
+                Your workspace is clear. Start managing your workflow by creating your first task.
+              </EmptyPlaceholder.Description>
+              <PostCreateButton variant="outline" className="mt-6 border-white/10 hover:bg-white/5 hover:text-white rounded-full" />
+            </EmptyPlaceholder>
+          </div>
         )}
       </div>
     </DashboardShell>

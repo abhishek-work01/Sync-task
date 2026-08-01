@@ -1,5 +1,4 @@
-import { Inter as FontSans } from "next/font/google"
-import localFont from "next/font/local"
+import { Plus_Jakarta_Sans } from "next/font/google"
 
 import "@/styles/globals.css"
 import { siteConfig } from "@/config/site"
@@ -9,15 +8,11 @@ import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const fontSans = FontSans({
+// Load the premium Plus Jakarta Sans font
+const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
-
-// Font files can be colocated inside of `pages`
-const fontHeading = localFont({
-  src: "../assets/fonts/CalSans-SemiBold.woff2",
-  variable: "--font-heading",
+  weight: ["300", "400", "500", "600", "700"], // Ensures we have all the light/bold weights
 })
 
 interface RootLayoutProps {
@@ -45,7 +40,6 @@ export const metadata = {
   ],
   creator: "shadcn",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   openGraph: {
@@ -73,16 +67,22 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
+    <html lang="en" className="dark bg-black" suppressHydrationWarning>
+      <head>
+        {/* Map both base text and headings to our new premium font */}
+        <style dangerouslySetInnerHTML={{__html: `
+          :root {
+            --font-heading: var(--font-sans);
+          }
+        `}} />
+      </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable
+          "min-h-screen bg-background font-sans antialiased selection:bg-zinc-800 selection:text-white",
+          fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
           {children}
           <Analytics />
           <Toaster />
