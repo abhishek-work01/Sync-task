@@ -34,6 +34,10 @@ export async function POST(req: Request) {
 
     return new Response(JSON.stringify(task))
   } catch (error) {
+    // This console.log is crucial. If the 500 error persists, 
+    // the exact Prisma failure will print in your VS Code terminal!
+    console.error("TASK CREATION ERROR:", error)
+
     if (error instanceof z.ZodError) {
       return new Response(JSON.stringify(error.issues), { status: 422 })
     }

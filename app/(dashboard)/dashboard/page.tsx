@@ -3,7 +3,12 @@ import { redirect } from "next/navigation"
 import { authOptions } from "@/lib/auth"
 import { db } from "@/lib/db"
 import { getCurrentUser } from "@/lib/session"
-import { EmptyPlaceholder } from "@/components/empty-placeholder"
+import { 
+  EmptyPlaceholder,
+  EmptyPlaceholderIcon,
+  EmptyPlaceholderTitle,
+  EmptyPlaceholderDescription
+} from "@/components/empty-placeholder"
 import { DashboardHeader } from "@/components/header"
 import { PostCreateButton } from "@/components/post-create-button"
 import { PostItem } from "@/components/post-item"
@@ -59,12 +64,14 @@ export default async function DashboardPage() {
           <div className="overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)] backdrop-blur-sm">
             <EmptyPlaceholder>
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] mb-4">
-                <EmptyPlaceholder.Icon name="post" className="text-zinc-400" />
+                <EmptyPlaceholderIcon name="post" className="text-zinc-400" />
               </div>
-              <EmptyPlaceholder.Title className="text-xl font-medium text-zinc-100">No tasks created</EmptyPlaceholder.Title>
-              <EmptyPlaceholder.Description className="text-zinc-400 font-light max-w-sm mx-auto">
+              <EmptyPlaceholderTitle className="text-xl font-medium text-zinc-100">
+                No tasks created
+              </EmptyPlaceholderTitle>
+              <EmptyPlaceholderDescription className="text-zinc-400 font-light max-w-sm mx-auto">
                 Your workspace is clear. Start managing your workflow by creating your first task.
-              </EmptyPlaceholder.Description>
+              </EmptyPlaceholderDescription>
               <PostCreateButton variant="outline" className="mt-6 border-white/10 hover:bg-white/5 hover:text-white rounded-full" />
             </EmptyPlaceholder>
           </div>

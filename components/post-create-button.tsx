@@ -22,12 +22,12 @@ export function PostCreateButton({
     setIsLoading(true)
 
     const response = await fetch("/api/tasks", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: "Untitled Task",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "Untitled Task",
       }),
     })
 

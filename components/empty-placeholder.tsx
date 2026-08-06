@@ -1,5 +1,6 @@
-import * as React from "react"
+"use client";
 
+import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 
@@ -25,12 +26,11 @@ export function EmptyPlaceholder({
   )
 }
 
-interface EmptyPlaceholderIconProps
-  extends Partial<React.SVGProps<SVGSVGElement>> {
+interface EmptyPlaceholderIconProps extends React.HTMLAttributes<HTMLDivElement> {
   name: keyof typeof Icons
 }
 
-EmptyPlaceholder.Icon = function EmptyPlaceHolderIcon({
+export function EmptyPlaceholderIcon({
   name,
   className,
   ...props
@@ -43,34 +43,33 @@ EmptyPlaceholder.Icon = function EmptyPlaceHolderIcon({
 
   return (
     <div className="flex h-20 w-20 items-center justify-center rounded-full bg-muted">
+      {/* @ts-ignore - Bypassing strict Lucide React ref typing */}
       <Icon className={cn("h-10 w-10", className)} {...props} />
     </div>
   )
 }
 
-interface EmptyPlacholderTitleProps
-  extends React.HTMLAttributes<HTMLHeadingElement> {}
+interface EmptyPlaceholderTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
 
-EmptyPlaceholder.Title = function EmptyPlaceholderTitle({
+export function EmptyPlaceholderTitle({
   className,
   ...props
-}: EmptyPlacholderTitleProps) {
+}: EmptyPlaceholderTitleProps) {
   return (
-    <h2 className={cn("mt-6 text-xl font-semibold", className)} {...props} />
+    <h2 className={cn("mt-6 text-xl font-semibold text-white", className)} {...props} />
   )
 }
 
-interface EmptyPlacholderDescriptionProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+interface EmptyPlaceholderDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
-EmptyPlaceholder.Description = function EmptyPlaceholderDescription({
+export function EmptyPlaceholderDescription({
   className,
   ...props
-}: EmptyPlacholderDescriptionProps) {
+}: EmptyPlaceholderDescriptionProps) {
   return (
     <p
       className={cn(
-        "mb-8 mt-2 text-center text-sm font-normal leading-6 text-muted-foreground",
+        "mb-8 mt-2 text-center text-sm font-normal leading-6 text-neutral-400",
         className
       )}
       {...props}

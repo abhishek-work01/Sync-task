@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link"
 
 import { docsConfig } from "@/config/docs"
@@ -38,7 +40,8 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
         </div>
       </header>
       <div className="container flex-1">{children}</div>
-      <SiteFooter className="border-t" />
+      {/* Removed the offending className prop here */}
+      <SiteFooter />
     </div>
   )
 }
