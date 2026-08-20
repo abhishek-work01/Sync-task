@@ -1,3 +1,4 @@
+"use client"
 import { Metadata } from "next"
 import Link from "next/link"
 
@@ -6,10 +7,6 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { UserAuthForm } from "@/components/user-auth-form"
 
-export const metadata: Metadata = {
-  title: "Login | SyncTask",
-  description: "Login to your SyncTask account",
-}
 
 export default function LoginPage() {
   return (
