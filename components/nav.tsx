@@ -83,7 +83,7 @@ export function Navbar() {
   );
 }
 
-// 2. THE MISSING DASHBOARD NAV (To stop the layout crash)
+// 2. THE MISSING DASHBOARD NAV (Safe icon resolution)
 export function DashboardNav({ items }: { items: any[] }) {
   const path = usePathname();
 
@@ -94,7 +94,9 @@ export function DashboardNav({ items }: { items: any[] }) {
   return (
     <nav className="grid items-start gap-2">
       {items.map((item, index) => {
-        const Icon = Icons[item.icon as keyof typeof Icons || "arrowRight"];
+        // Safely resolve icon to prevent server-side context crashes
+        const Icon = (Icons as Record<string, any>)[item.icon] || Icons.arrowRight;
+
         return (
           item.href && (
             <Link key={index} href={item.disabled ? "/" : item.href}>
@@ -105,7 +107,7 @@ export function DashboardNav({ items }: { items: any[] }) {
                   item.disabled && "cursor-not-allowed opacity-80"
                 )}
               >
-                <Icon className="mr-2 h-4 w-4" />
+                {Icon && <Icon className="mr-2 h-4 w-4" />}
                 <span>{item.title}</span>
               </span>
             </Link>
